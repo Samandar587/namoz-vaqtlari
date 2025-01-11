@@ -5,16 +5,6 @@ DOCKER_COMPOSE_FILE=docker-compose.yaml
 
 arg = $(filter-out $@,$(MAKECMDGOALS))
 
-# proto
-.PHONY: proto-gen
-proto-gen:
-	./scripts/gen-proto.sh
-
-# git submodule init 	
-.PHONY: pull-proto
-pull-proto:
-	git submodule update --init --recursive
-
 # go generate	
 .PHONY: go-gen
 go-gen:
